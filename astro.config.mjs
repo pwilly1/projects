@@ -1,5 +1,6 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  site: 'http://localhost:3000',
+  site: 'https://pwilly1.github.io/projects.github.io',
+  base: '/projects.github.io/',
 });
