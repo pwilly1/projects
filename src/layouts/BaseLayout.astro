@@ -1,0 +1,49 @@
+---
+const { title = 'My Site', description = 'A nicer site built with Astro' } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <!-- Decorative layered landscape background (parallax) -->
+    <div id="landscape" aria-hidden="true">
+  <div class="layer layer-sky" data-speed="0.04"></div>
+  <div class="layer layer-clouds" data-speed="0.05"></div>
+  <div class="layer layer-mountains" data-speed="0.08"></div>
+  <div class="layer layer-hills" data-speed="0.16"></div>
+  <div class="layer layer-foreground" data-speed="0.34"></div>
+    </div>
+    <header class="site-header">
+      <div class="container">
+        <h1 class="site-title">{title}</h1>
+        <nav class="site-nav">
+          <a href="/">Home</a>
+          <a href="#projects">Projects</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>{new Date().getFullYear()}</p>
+      </div>
+    </footer>
+    <script src="/js/scroll.js" defer></script>
+    <script src="/js/parallax.js" defer></script>
+    <script src="/js/toggle-projects.js" defer></script>
+    <script src="/js/toggle-resume.js" defer></script>
+  </body>
+</html>
