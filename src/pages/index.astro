@@ -118,19 +118,17 @@ const projects = [
         </a>
       </div>
 
-      <div class="schema-visual" aria-label="Apptura system architecture diagram">
-        <div class="sheet-heading"><span>APPTURA / SYSTEM MAP</span><span>REV. 08</span></div>
-        <div class="schema-body">
-          <div class="schema-node node-prompt"><small>INPUT</small><strong>Natural language</strong><span>Application requirements</span></div>
-          <span class="connector connector-one" aria-hidden="true"></span>
-          <div class="schema-node node-plan"><small>CONTRACT</small><strong>Page schema</strong><span>Blocks · actions · bindings</span></div>
-          <span class="connector connector-two" aria-hidden="true"></span>
-          <div class="schema-split" aria-hidden="true"></div>
-          <div class="schema-node node-web"><small>RUNTIME A</small><strong>React</strong><span>Web editor and preview</span></div>
-          <div class="schema-node node-native"><small>RUNTIME B</small><strong>Compose</strong><span>Native Android preview</span></div>
-        </div>
-        <div class="sheet-footer"><span>Deterministic compilation</span><span>Compiler-guided repair</span></div>
-      </div>
+      <a class="project-media apptura-media" href="https://github.com/pwilly1/AppBuilder" target="_blank" rel="noreferrer" aria-label="View the Apptura repository">
+        <img
+          src={`${base}assets/images/apptura-editor.png`}
+          width="1895"
+          height="861"
+          loading="lazy"
+          decoding="async"
+          alt="Apptura visual editor with a block library, mobile canvas, page controls, and properties inspector"
+        />
+        <span aria-hidden="true">View ↗</span>
+      </a>
     </article>
 
     <div class="project-list">

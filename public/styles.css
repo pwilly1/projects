@@ -534,116 +534,6 @@ p {
   font-style: normal;
 }
 
-.schema-visual {
-  align-self: start;
-  background: var(--ink);
-  color: var(--paper);
-  min-height: 44rem;
-}
-
-.sheet-heading,
-.sheet-footer {
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  padding: 1rem 1.25rem;
-  border-bottom: 1px solid rgba(240, 237, 228, 0.28);
-  font-size: 0.66rem;
-  letter-spacing: 0.11em;
-}
-
-.sheet-footer {
-  border-top: 1px solid rgba(240, 237, 228, 0.28);
-  border-bottom: 0;
-  color: rgba(240, 237, 228, 0.62);
-}
-
-.schema-body {
-  position: relative;
-  min-height: 38rem;
-  background-image:
-    linear-gradient(rgba(240, 237, 228, 0.08) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(240, 237, 228, 0.08) 1px, transparent 1px);
-  background-size: 3rem 3rem;
-}
-
-.schema-node {
-  position: absolute;
-  display: grid;
-  width: 12rem;
-  padding: 0.9rem;
-  border: 1px solid rgba(240, 237, 228, 0.58);
-  background: var(--ink);
-}
-
-.schema-node small {
-  margin-bottom: 1.4rem;
-  color: #c36c80;
-  font-size: 0.6rem;
-  letter-spacing: 0.1em;
-}
-
-.schema-node strong {
-  font-family: var(--serif);
-  font-size: 1.45rem;
-  font-weight: 400;
-}
-
-.schema-node span {
-  margin-top: 0.2rem;
-  color: rgba(240, 237, 228, 0.66);
-  font-size: 0.7rem;
-}
-
-.node-prompt { top: 3rem; left: 3rem; }
-.node-plan { top: 13.5rem; left: calc(50% - 6rem); }
-.node-web { right: 3rem; bottom: 3rem; }
-.node-native { left: 3rem; bottom: 3rem; }
-
-.connector {
-  position: absolute;
-  display: block;
-  height: 1px;
-  transform-origin: left;
-  background: rgba(240, 237, 228, 0.55);
-}
-
-.connector::after {
-  content: '';
-  position: absolute;
-  top: -0.2rem;
-  right: 0;
-  width: 0.42rem;
-  height: 0.42rem;
-  border-top: 1px solid currentColor;
-  border-right: 1px solid currentColor;
-  transform: rotate(45deg);
-}
-
-.connector-one {
-  top: 11rem;
-  left: 14rem;
-  width: 28%;
-  transform: rotate(24deg);
-}
-
-.connector-two {
-  top: 19rem;
-  left: 50%;
-  width: 20%;
-  transform: rotate(34deg);
-}
-
-.schema-split {
-  position: absolute;
-  top: 26rem;
-  left: 20%;
-  width: 60%;
-  height: 4rem;
-  border-top: 1px solid rgba(240, 237, 228, 0.45);
-  border-inline: 1px solid rgba(240, 237, 228, 0.45);
-}
-
 .project-list {
   border-bottom: 1px solid var(--ink);
 }
@@ -714,6 +604,14 @@ p {
   transform: rotate(8deg);
   background: var(--garnet);
   color: var(--paper);
+}
+
+.project-media.apptura-media {
+  background: #102746;
+}
+
+.project-media.apptura-media img {
+  object-fit: contain;
 }
 
 .project-row-copy {
@@ -1001,10 +899,6 @@ p {
     max-width: 46rem;
   }
 
-  .schema-visual {
-    width: min(100%, 48rem);
-  }
-
   .project-row,
   .project-row:nth-child(even) {
     grid-template-columns: 1fr;
@@ -1129,35 +1023,6 @@ p {
     max-width: 32rem;
   }
 
-  .schema-visual {
-    min-height: 39rem;
-  }
-
-  .schema-body {
-    min-height: 34rem;
-    background-size: 2.4rem 2.4rem;
-  }
-
-  .schema-node {
-    width: 10.2rem;
-    padding: 0.7rem;
-  }
-
-  .schema-node small {
-    margin-bottom: 0.85rem;
-  }
-
-  .schema-node strong {
-    font-size: 1.2rem;
-  }
-
-  .node-prompt { top: 2rem; left: 1rem; }
-  .node-plan { top: 11rem; left: calc(50% - 5.1rem); }
-  .node-web { right: 1rem; bottom: 2rem; }
-  .node-native { left: 1rem; bottom: 2rem; }
-  .connector-one { top: 9rem; left: 8rem; width: 32%; }
-  .connector-two { top: 17rem; width: 27%; }
-  .schema-split { top: 23rem; left: 17%; width: 66%; }
   .project-media {
     min-height: 22rem;
   }
@@ -1211,11 +1076,6 @@ p {
   .about h2,
   .contact h2 {
     font-size: clamp(3.1rem, 16vw, 4.7rem);
-  }
-
-  .sheet-heading,
-  .sheet-footer {
-    font-size: 0.58rem;
   }
 
   .project-media {
