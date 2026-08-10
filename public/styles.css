@@ -716,7 +716,7 @@ p {
 .project-bullets li,
 .experience-description li {
   color: var(--ink-soft);
-  font-size: 0.95rem;
+  font-size: 1rem;
   line-height: 1.6;
 }
 
@@ -841,7 +841,7 @@ p {
 .toolbox dd {
   margin: 0;
   color: var(--ink-soft);
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 
 .contact {
