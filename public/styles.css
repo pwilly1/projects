@@ -175,6 +175,8 @@ p {
 
 .brand {
   display: grid;
+  min-height: 2.75rem;
+  align-content: center;
   gap: 0.05rem;
   color: var(--ink);
   line-height: 1.1;
@@ -206,6 +208,7 @@ p {
 
 .site-nav a {
   display: inline-flex;
+  min-width: 2.75rem;
   min-height: 2.75rem;
   align-items: center;
   gap: 0.35rem;
@@ -914,6 +917,7 @@ p {
 
 .footer-inner a {
   display: inline-flex;
+  min-width: 2.75rem;
   min-height: 2.75rem;
   align-items: center;
   color: var(--paper);
