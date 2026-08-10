@@ -1,188 +1,164 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
+const base = import.meta.env.BASE_URL;
+
 const projects = [
-    {
-    id: 'defi',
+  {
+    index: '02',
     title: 'Uniswap Token & Wallet Tracker',
-  image: './assets/images/uniswap.png',
-    overview: 'A real-time monitoring and analysis tool for Uniswap, built with Python, Web3.py, and React for the frontend. It detects new liquidity pairs, analyzes token safety, and tracks wallet activity.',
-    builtWith: ['Python', 'Web3.py', 'React', 'FastAPI', 'Render', 'MongoDB'],
-    features: [
-      'Used Render server to deploy my FastAPI backend and React frontend which allowed for end-to-end access to token and wallet tracking dashboards in real time.',
-      'Used Web3 event listeners to detect new Uniswap liquidity pair creations instantly.',
-      'Automated token analysis for things like honeypot detection, liquidity evaluation, ownership renouncement checks and more.',
-      'Built a wallet tracker to log ERC-20 transfers involving watch-listed addresses.',
-      'Kept results in a Mongo database where users can also store wallet addresses that they want to track'
+    category: 'Blockchain monitoring application',
+    description:
+      'Developed a full-stack Python-based tool to monitor and analyze new Uniswap token launches in real time.',
+    bullets: [
+      'Used Python, FastAPI, and Web3.py to monitor Uniswap liquidity pair creation events and process new token launches in real time.',
+      'Built backend logic to analyze token liquidity, ownership status, and ERC-20 transfers for watch-listed wallets.',
+      'Deployed the FastAPI backend and React frontend on Render, providing end-to-end access to real-time token and wallet tracking dashboards.',
     ],
-    highlights: 'Real-time blockchain event handling and an integrated GUI dashboard',
-    links: [
-      { label: 'GitHub Repository', url: 'https://github.com/pwilly1/eth_bot' }
-    ]
+    technologies: ['Python', 'FastAPI', 'Web3.py', 'React', 'MongoDB', 'Render'],
+    image: `${base}assets/images/uniswap.png`,
+    width: 1008,
+    height: 802,
+    alt: 'Token tracker interface displaying live liquidity and ownership data',
+    links: [{ label: 'View repository', url: 'https://github.com/pwilly1/eth_bot' }],
   },
   {
-    id: 'game',
-    title: 'C++ 2D Game/Engine',
-  image: './assets/images/game.png',
-    overview: 'A custom-built 2D game engine using SDL3, designed to support tile-based worlds, interactive entities, and real-time gameplay mechanics.',
-    builtWith: ['C++', 'SDL3', 'SDL3_image', 'SDL3_ttf', 'TinyXML2', 'CMake'],
-    features: [
-      'Polymorphic entity system with Player/Enemy classes',
-      'Dynamic camera movement and zoom scaling',
-      'Tile-based world rendering and chunk parsing',
-      'Procedural terrain generation with cellular automata',
-      'Break/place tile mechanics and inventory',
-      'HUD rendering and map background switching'
+    index: '03',
+    title: 'C++ 2D Platformer',
+    category: 'Game and custom engine',
+    description:
+      'Developed a 2D tile-based platformer from scratch using C++, SDL3, and TinyXML2, implementing core game-engine features.',
+    bullets: [
+      'Built a custom rendering engine with a camera system, texture management, and delta-time handling for smooth motion.',
+      'Implemented procedural map generation using cellular automata and noise-based algorithms, with tunable smoothing iterations and density thresholds.',
     ],
-    highlights: 'Smooth game loop with delta time, real-time event handling, and collision detection using AABB',
-    links: [
-      { label: 'GitHub Repository', url: 'https://github.com/pwilly1/cppproject' }
-    ]
+    technologies: ['C++', 'SDL3', 'TinyXML2', 'CMake'],
+    image: `${base}assets/images/game.png`,
+    width: 1515,
+    height: 937,
+    alt: 'A procedurally generated cave in the custom C++ platformer',
+    links: [{ label: 'View repository', url: 'https://github.com/pwilly1/cppproject' }],
   },
   {
-    id: 'website',
-    title: 'RealView - Real Estate Platform',
-  image: './assets/images/website.png',
-    overview: 'A dynamic real estate website built with React, Node.js, and MongoDB, featuring full CRUD functionality and responsive design for both desktop and mobile.',
-    builtWith: ['React', 'Node.js', 'Express', 'MongoDB', 'Render', 'CSS Grid/Flexbox'],
-    features: [
-      'Admin dashboard to add, edit, and delete listings',
-      'MongoDB backend with secure API routing and user management',
-      'Render-hosted Node.js server with RESTful endpoints',
-      'Responsive front-end with reusable React components',
-      'Clean UI styled using CSS Flexbox, Grid, and media queries'
+    index: '04',
+    title: 'RealView',
+    category: 'Full-stack real-estate platform',
+    description:
+      'Developed a dynamic real-estate website with React, Node.js, Express, and MongoDB, featuring full CRUD functionality and responsive layouts for desktop and mobile.',
+    bullets: [
+      'Built an admin dashboard for adding, editing, and deleting property listings.',
+      'Implemented a MongoDB backend with secure API routing and user management.',
+      'Deployed a Node.js server on Render with RESTful endpoints for listing data.',
+      'Created a responsive frontend with reusable React components.',
+      'Built the interface with CSS Grid, Flexbox, and responsive media queries.',
     ],
-    highlights: 'Full-stack CRUD operations, modular React codebase, mobile-first layout',
+    technologies: ['React', 'Node.js', 'Express', 'MongoDB', 'Render'],
+    image: `${base}assets/images/website.png`,
+    width: 1501,
+    height: 843,
+    alt: 'RealView property listings interface with filters and listing cards',
     links: [
-      { label: 'Live Website', url: 'https://pwilly1.github.io/RealView/' },
-      { label: 'Client Code', url: 'https://github.com/pwilly1/RealView' },
-      { label: 'Server Code', url: 'https://github.com/pwilly1/react-backend' },
-      { label: 'Live Server', url: 'https://react-backend-4pwh.onrender.com/' }
-    ]
-  }
+      { label: 'Visit project', url: 'https://pwilly1.github.io/RealView/' },
+      { label: 'View repository', url: 'https://github.com/pwilly1/RealView' },
+    ],
+  },
 ];
-
-// Work currently in progress — editable list
-const inProgress = [
-    {
-    id: 'App-Builder',
-    title: 'App Builder Project',
-    short: 'The App Builder Project is a creative platform designed to let users build custom applications without needing to write code, combining a drag-and-drop interface with AI-powered assistance.',
-    eta: 'Early 2026',
-    links: [{ label: 'GitHub', url: 'https://github.com/pwilly1/AppBuilder' }]
-  },
-  {
-    id: 'mp-support',
-    title: 'Multiplayer Support (Game Engine)',
-    short: 'Investigating deterministic rollback and network sync for the 2D engine to enable multiplayer matches.',
-    eta: 'Q4 2025',
-    links: [{ label: 'GitHub', url: 'https://github.com/pwilly1/cppproject' }]
-  }
-];
-
 ---
 
-<BaseLayout title="Preston Willis" description="A clean showcase of my portfolio">
-  <!-- Compact resume at the top -->
-  <section id="resume" class="resume resume-compact animate-in" data-delay="0">
-    <div class="resume-card compact">
-      <header class="resume-header compact">
-        <div>
-          <h2>PRESTON WILLIS</h2>
-          <p class="muted small">Computer Science - University of South Carolina (2023–2027)</p>
-        </div>
-        <div class="contact small">
-          <p>803-448-3810 • <a href="mailto:prwillis2@gmail.com">prwillis2@gmail.com</a></p>
-          <p>Columbia, SC • <a href="https://github.com/pwilly1" target="_blank" rel="noopener">github.com/pwilly1</a></p>
-        </div>
-      </header>
-        <div class="resume-compact-row">
-  <p class="muted small">Computer Science major with experience in C++, real-time systems, automation, and full-stack development.</p>
-  <button class="resume-toggle" id="resume-toggle" aria-expanded="false" aria-controls="resume-panel" type="button">View Full Resume</button>
-      </div>
-        <div id="resume-panel" class="resume-panel" hidden>
-          <div class="resume-panel-inner">
-          <h3>Professional Summary</h3>
-          <p>Computer Science major at the University of South Carolina with strong experience in C++. Skilled in working on real-time systems, automation, and data-driven applications. Experienced in developing full stack projects.</p>
-
-          <h4>Technical Skills</h4>
-          <p><strong>Technologies:</strong> Git, MongoDB, Render, React, Node.js</p>
-
-          <h4>Work Experience</h4>
-          <h5>Stephen Cooley Real Estate - Intern</h5>
-          <p><em>May–Aug 2024 & 2025</em></p>
-          <ul>
-            <li>Managed and organized digital and physical files, ensuring accessibility and accuracy.</li>
-            <li>Optimized the company’s website by enhancing SEO and resolving errors.</li>
-            <li>Developed multiple Python automation tools; one validated, formatted, and batch-uploaded closing disclosure data into Google Sheets, increasing filing rate by 30%.</li>
-          </ul>
-
-          <h4>Projects</h4>
-          <h5>Uniswap Token and Wallet Tracker</h5>
-          <ul>
-            <li>Used Web3 event listeners to detect new Uniswap liquidity pair creations instantly.</li>
-            <li>Automated token analysis for honeypot detection, liquidity evaluation, ownership renouncement checks and more.</li>
-            <li>Built a wallet tracker to log ERC-20 transfers involving watch-listed addresses.</li>
-            <li>Kept results in a Mongo database where users can also store wallet addresses that they want to track</li>
-            <li>Used Render server to deploy my FastAPI backend and React frontend which allowed for end-to-end access to token and wallet tracking dashboards in real time.</li>
-          </ul>
-
-          <h5>C++ Game Engine / Game</h5>
-          <ul>
-            <li>Custom rendering engine with camera system, texture management, and delta time for smooth motion.</li>
-            <li>Procedural map generation using cellular automata and noise-based algorithms.</li>
-            <li>Physics-based movement with gravity, jumping, and collision detection (tile and object-based) </li>
-          </ul>
-
-          <h4>Education</h4>
-          <p>Bachelor’s Degree, Computer Science - University of South Carolina (2023 – 2027)</p>
-          </div>
-        </div>
-      </div>
+<BaseLayout>
+  <section id="top" class="hero page-shell" aria-labelledby="hero-title">
+    <div class="hero-heading" data-reveal>
+      <p class="section-label">Computer Science · Software Development · Systems Engineering</p>
+      <h1 id="hero-title"><span>Preston</span><span>Willis<em>.</em></span></h1>
     </div>
+
+    <div class="hero-lower" data-reveal data-delay="1">
+      <p class="hero-intro">
+        Computer Science student at the University of South Carolina with experience in full-stack development, AI-assisted tooling, simulation, automation, and systems engineering.
+      </p>
+      <dl class="hero-facts">
+        <div><dt>Location</dt><dd>Columbia, SC</dd></div>
+        <div><dt>Degree</dt><dd>B.S. Computer Science</dd></div>
+        <div><dt>Graduation</dt><dd>December 2027</dd></div>
+      </dl>
+      <a class="primary-link" href="#work">Projects <span aria-hidden="true">↓</span></a>
+    </div>
+
+    <div class="hero-rule" aria-hidden="true"><span></span></div>
   </section>
 
-  <section class="hero">
-    <div class="hero-content animate-in" data-delay="40">
-    </div>
-  </section>
+  <section id="work" class="work page-shell" aria-labelledby="work-title">
+    <header class="section-intro" data-reveal>
+      <p class="section-label">Selected work</p>
+      <h2 id="work-title">Projects</h2>
+      <p>App generation, blockchain monitoring, game-engine development, and full-stack web development.</p>
+    </header>
 
-  <section id="projects" class="projects projects-list">
-    <h3>Projects</h3>
-    <div class="projects-list-inner">
-      {projects.map((p, i) => (
-        <article class="project-item animate-in" data-delay={i * 90}>
-          <div class="project-media">
-            <img src={p.image} alt={p.title} />
-          </div>
-          <div class="project-body">
-            <div class="project-header-row">
-              <h4>{p.title}</h4>
-              <button
-                class="project-toggle btn"
-                aria-expanded="false"
-                aria-controls={`project-${p.id}`}
-                type="button"
-              >Details</button>
-            </div>
+    <article class="project feature-project" data-reveal>
+      <div class="project-copy">
+        <div class="project-index"><span>01</span><span>AI-assisted no-code app builder</span></div>
+        <h3>Apptura</h3>
+        <p class="project-summary">
+          AI-assisted no-code mobile app builder that generates fully editable mobile applications from natural-language prompts through a visual editor.
+        </p>
 
-            <div id={`project-${p.id}`} class="project-content" hidden>
-              <p class="muted">{p.overview}</p>
-              <section class="project-details">
-                <p><strong>Built With:</strong> {p.builtWith.join(', ')}</p>
-                <div>
-                  <strong>Features:</strong>
-                  <ul>
-                    {p.features.map((f) => (<li>{f}</li>))}
-                  </ul>
-                </div>
-                <p><strong>Highlights:</strong> {p.highlights}</p>
-              </section>
-              <p class="project-links">
-                {p.links.map((l) => (
-                  <a class="btn" href={l.url} target="_blank" rel="noopener">{l.label}</a>
-                ))}
-              </p>
+        <ul class="project-bullets">
+          <li>Achieved consistent rendering across React/TypeScript web and Kotlin/Jetpack Compose Android by building a shared schema for reusable blocks, layouts, actions, and data bindings.</li>
+          <li>Designed an AI page-generation pipeline using OpenAI structured outputs, a versioned schema, deterministic compilation, automatic layout and collision repair, and compiler-guided retries.</li>
+          <li>Developed a Node.js, Express, and MongoDB backend with more than 30 authenticated and public API routes, deployed across Azure App Service, Static Web Apps, and Blob Storage using GitHub Actions CI/CD.</li>
+          <li>Validated usability with 10 users who created 18 multi-page applications; 8 of 10 completed the primary workflow without assistance.</li>
+        </ul>
+
+        <div class="system-path" aria-label="Apptura generation path">
+          <span>Natural-language prompt</span><i aria-hidden="true">→</i><span>Versioned schema</span><i aria-hidden="true">→</i><span>React and Android runtimes</span>
+        </div>
+
+        <a class="project-link" href="https://github.com/pwilly1/AppBuilder" target="_blank" rel="noreferrer">
+          View repository <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+
+      <div class="schema-visual" aria-label="Apptura system architecture diagram">
+        <div class="sheet-heading"><span>APPTURA / SYSTEM MAP</span><span>REV. 08</span></div>
+        <div class="schema-body">
+          <div class="schema-node node-prompt"><small>INPUT</small><strong>Natural language</strong><span>Application requirements</span></div>
+          <span class="connector connector-one" aria-hidden="true"></span>
+          <div class="schema-node node-plan"><small>CONTRACT</small><strong>Page schema</strong><span>Blocks · actions · bindings</span></div>
+          <span class="connector connector-two" aria-hidden="true"></span>
+          <div class="schema-split" aria-hidden="true"></div>
+          <div class="schema-node node-web"><small>RUNTIME A</small><strong>React</strong><span>Web editor and preview</span></div>
+          <div class="schema-node node-native"><small>RUNTIME B</small><strong>Compose</strong><span>Native Android preview</span></div>
+        </div>
+        <div class="sheet-footer"><span>Deterministic compilation</span><span>Compiler-guided repair</span></div>
+      </div>
+    </article>
+
+    <div class="project-list">
+      {projects.map((project) => (
+        <article class="project project-row" data-reveal>
+          <a class="project-media" href={project.links[0].url} target="_blank" rel="noreferrer" aria-label={`${project.links[0].label}: ${project.title}`}>
+            <img
+              src={project.image}
+              width={project.width}
+              height={project.height}
+              loading="lazy"
+              decoding="async"
+              alt={project.alt}
+            />
+            <span aria-hidden="true">View ↗</span>
+          </a>
+          <div class="project-row-copy">
+            <div class="project-index"><span>{project.index}</span><span>{project.category}</span></div>
+            <h3>{project.title}</h3>
+            <p class="project-description">{project.description}</p>
+            <ul class="project-bullets">
+              {project.bullets.map((bullet) => <li>{bullet}</li>)}
+            </ul>
+            <p class="project-technologies"><strong>Technologies:</strong> {project.technologies.join(', ')}</p>
+            <div class="project-links">
+              {project.links.map((link) => (
+                <a class="project-link" href={link.url} target="_blank" rel="noreferrer">{link.label} <span aria-hidden="true">↗</span></a>
+              ))}
             </div>
           </div>
         </article>
@@ -190,32 +166,68 @@ const inProgress = [
     </div>
   </section>
 
-  <section id="in-progress" class="in-progress-section animate-in" data-delay="120">
-    <h3>In Progress</h3>
-    <div class="in-progress-list">
-      {inProgress.map((p) => (
-        <article class="in-progress-item">
-          <div class="in-progress-media">
-          </div>
-          <div class="in-progress-body">
-            <div style="display:flex;align-items:center;justify-content:space-between;gap:0.5rem">
-              <h4 style="margin:0">{p.title}</h4>
-              <span class="badge">In Progress</span>
-            </div>
-            <p class="muted small">{p.short}</p>
-            <p class="muted"><strong>ETA:</strong> {p.eta}</p>
-              {p.links ? (
-                <p class="project-links">
-                  {p.links.map((l) => (
-                    <a class="btn" href={l.url} target="_blank" rel="noopener">{l.label}</a>
-                  ))}
-                </p>
-              ) : null}
-          </div>
-        </article>
-      ))}
+  <section id="experience" class="experience page-shell" aria-labelledby="experience-title">
+    <header class="section-intro narrow" data-reveal>
+      
+      <h2 id="experience-title">Experience</h2>
+    </header>
+
+    <div class="experience-list">
+      <article data-reveal>
+        <p class="experience-date">May - August 2026</p>
+        <div class="experience-title">
+          <h3>Lead Systems Engineer</h3>
+          <p>NASA L’SPACE Mission Concept Academy</p>
+        </div>
+        <div class="experience-description">
+          <ul>
+            <li>Led an eight-person engineering team for lunar rover mission design, coordinating subsystem requirements, interfaces, trade studies, and technical documentation across four subsystem teams.</li>
+            <li>Built a Python command-and-data-handling simulator to model science-data generation, working-memory buffering, onboard-storage usage, compression policies, data-bus throughput, and downlink windows.</li>
+            <li>Tracked more than 10 subsystem interfaces and mass, power, and data constraints to improve requirement consistency across the rover architecture.</li>
+            <li>Authored system requirements, interface documentation, and trade-study analyses for the rover’s flight computer, onboard storage, and communications architecture.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article data-reveal>
+        <p class="experience-date">May - August 2024 and 2025</p>
+        <div class="experience-title">
+          <h3>Intern</h3>
+          <p>Stephen Cooley Real Estate</p>
+        </div>
+        <div class="experience-description">
+          <ul>
+            <li>Developed Python automation tools, including a workflow that validated, formatted, and batch-uploaded closing-disclosure data into Google Sheets, increasing the filing rate by 30%.</li>
+            <li>Optimized the company website by improving SEO and resolving errors, increasing search visibility and improving page indexing.</li>
+            <li>Tracked and maintained more than 100 merchandise inventory items by updating supply counts, identifying low-stock items, and supporting reorder planning.</li>
+          </ul>
+        </div>
+      </article>
     </div>
   </section>
 
+  <section id="about" class="about page-shell" aria-labelledby="about-title">
+    <div class="about-copy" data-reveal>
+      <p class="section-label">Education</p>
+      <h2 id="about-title">Education and skills</h2>
+      <p>University of South Carolina</p>
+      <p>Bachelor of Science in Computer Science · GPA: 3.7/4.0 · Expected graduation: December 2027</p>
+    </div>
 
+    <div class="toolbox" data-reveal data-delay="1">
+      <p class="section-label">Technical skills</p>
+      <dl>
+        <div><dt>Languages</dt><dd>Java, C++, JavaScript, TypeScript, Python</dd></div>
+        <div><dt>Technologies</dt><dd>Git, MongoDB, Render, React, Node.js, Linux, Azure, Express</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section id="contact" class="contact" aria-labelledby="contact-title">
+    <div class="page-shell" data-reveal>
+      <p class="section-label">Contact</p>
+      <h2 id="contact-title">Contact</h2>
+      <a href="mailto:prwillis2@gmail.com">prwillis2@gmail.com <span aria-hidden="true">↗</span></a>
+    </div>
+  </section>
 </BaseLayout>

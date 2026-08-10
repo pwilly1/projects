@@ -1,5 +1,16 @@
 ---
-const { title = 'My Site', description = 'A nicer site built with Astro' } = Astro.props;
+const {
+  title = 'Preston Willis | Software & Systems Engineer',
+  description = 'Portfolio of Preston Willis, a software developer and systems engineer building AI-assisted products, full-stack applications, and real-time systems.',
+} = Astro.props;
+
+const base = import.meta.env.BASE_URL;
+const canonicalURL = Astro.site
+  ? new URL(Astro.url.pathname, Astro.site.origin)
+  : Astro.url;
+const socialImageURL = Astro.site
+  ? new URL(`${base}og.png`, Astro.site.origin)
+  : new URL(`${base}og.png`, Astro.url.origin);
 ---
 <!doctype html>
 <html lang="en">
@@ -7,43 +18,78 @@ const { title = 'My Site', description = 'A nicer site built with Astro' } = Ast
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
+    <meta name="theme-color" content="#f0ede4" />
+    <meta name="color-scheme" content="light" />
+    <link rel="canonical" href={canonicalURL} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:image" content={socialImageURL} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Preston Willis, software developer and systems engineer" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialImageURL} />
+
     <title>{title}</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Instrument+Serif:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href={`${base}styles.css`} />
   </head>
   <body>
-    <!-- Decorative layered landscape background (parallax) -->
-    <div id="landscape" aria-hidden="true">
-  <div class="layer layer-sky" data-speed="0.04"></div>
-  <div class="layer layer-clouds" data-speed="0.05"></div>
-  <div class="layer layer-mountains" data-speed="0.08"></div>
-  <div class="layer layer-hills" data-speed="0.16"></div>
-  <div class="layer layer-foreground" data-speed="0.34"></div>
-    </div>
-    <header class="site-header">
-      <div class="container">
-        <h1 class="site-title">{title}</h1>
-        <nav class="site-nav">
-          <a href="/">Home</a>
-          <a href="#projects">Projects</a>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <div class="scroll-progress" aria-hidden="true"><span></span></div>
+
+    <header class="site-header" data-header>
+      <div class="header-inner">
+        <a class="brand" href={`${base}#top`} aria-label="Preston Willis, back to top">
+          <strong>Preston Willis</strong>
+          <span>Software &amp; systems</span>
+        </a>
+
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="primary-navigation"
+          aria-label="Open navigation"
+        >
+          <span></span><span></span>
+        </button>
+
+        <nav id="primary-navigation" class="site-nav" aria-label="Primary navigation">
+          <a href={`${base}#work`}>Work</a>
+          <a href={`${base}#experience`}>Experience</a>
+          <a href={`${base}#about`}>About</a>
+          <a class="nav-email" href="mailto:prwillis2@gmail.com">Email me <span aria-hidden="true">↗</span></a>
         </nav>
       </div>
     </header>
 
-    <main class="container">
+    <main id="main-content">
       <slot />
     </main>
 
     <footer class="site-footer">
-      <div class="container">
-        <p>{new Date().getFullYear()}</p>
+      <div class="footer-inner">
+        <p>Preston Willis<br /><span>Columbia, South Carolina</span></p>
+        <nav aria-label="Footer links">
+          <a href="mailto:prwillis2@gmail.com">Email</a>
+          <a href="https://github.com/pwilly1" target="_blank" rel="noreferrer">GitHub</a>
+          <a href="https://www.linkedin.com/in/preston-willis-/" target="_blank" rel="noreferrer">LinkedIn</a>
+        </nav>
+        <p class="copyright">© {new Date().getFullYear()}</p>
       </div>
     </footer>
-    <script src="./js/scroll.js" defer></script>
-    <script src="./js/parallax.js" defer></script>
-    <script src="./js/toggle-projects.js" defer></script>
-    <script src="./js/toggle-resume.js" defer></script>
+
+    <script src={`${base}js/site.js`} defer></script>
   </body>
 </html>
